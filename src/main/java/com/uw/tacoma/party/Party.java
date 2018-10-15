@@ -20,30 +20,40 @@ public class Party {
             data2 = randomNumberInRange(1, q-1);
         }
     }
+
     public int shareData(){
         return data2;
 
     }
 
-    public int[] localCalculation(int shareData)
+    public int[] localCalculation(int shareData, boolean useForD)
     {
-        int[] localcomputes = new int[2];
-        int d = data1 - u;
-        int e = shareData - v;
-         localcomputes[0] = d;
-         localcomputes[1] = e;
-        return localcomputes;
+        int[] localComputes = new int[2];
+        int d, e;
+
+        if(!useForD) {
+            d = data1 - u;
+            e = shareData - v;
+        }
+        else
+        {
+            d = shareData - u;
+            e = data1 - v;
+        }
+        localComputes[0] = d;
+        localComputes[1] = e;
+
+        return localComputes;
     }
 
-    public int computeZ(int D, int E, int w1){
+    public int computeZ(int d, int e, int w){
 
-        int z1 = w1+E*u+D*v+D*E;
-        return z1;
+        int z = w +(e*u) + (d*v) + (d*e);
+        return z;
     }
     private int randomNumberInRange(int min, int max) {
         // TODO Auto-generated method stub
         Random random = new Random();
         return random.nextInt((max - min) + 1) + min;
-
     }
 }
