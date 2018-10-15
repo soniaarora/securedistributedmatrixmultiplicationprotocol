@@ -1,1 +1,1 @@
-# securedistributedmatrixmultiplicationprotocol
+# secure distributed matrix multiplication protocol 
