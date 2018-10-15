@@ -22,14 +22,15 @@ public class Application {
        int D = (localcomputes1[0] +localcomputes2[0]) % 11;
        System.out.println("D:" +D);
        int E = (localcomputes1[1] +localcomputes2[1]) % 11;
-        System.out.println("D:" +E);
+       System.out.println("D:" +E);
+
        int z1= party1.computeZ(D, E, correlatedData.getW1()) ;
-        System.out.println("Z1:" +z1);
+       System.out.println("Z1:" +z1);
+
        int z2= party2.computeZ(D,E, correlatedData.getW2());
+       System.out.println("Z2:" +z2);
 
-        System.out.println("Z2:" +z2);
        int Z = (z1+z2) % 11;
-
-        System.out.println("Z:" +Z);
+       System.out.println("Z:" +Z);
     }
 }
